@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Dashbord</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <!-- ==================== nav ====================== -->
+        <nav id="nav">
+            <img src="images/icons8-cancel-64.png" class="close" alt="">
+            <div class="logo">
+                <img src="images/icons8-hospital-48.png" alt="">
+                <h1>Hospital</h1>
+            </div>
+            <ul>
+                <li>
+                    <a href="index.html" >
+                        <img src="images/icons8-home-50.png" alt="">
+                        <div class="title">Home</div>
+                    </a>
+                </li>
+                <li class="side">
+                    <a href="#">
+                        <img src="images/icons8-users-64.png" alt="">
+                        <div class="title">Users</div>
+                        <img src="images/icons8-chevron-right-30.png" class="image img" alt="">
+                    </a>
+                </li>
+                <ul class="sidebar subMenu">
+                    <li>
+                        <img src="images/icons8-add-50.png" alt="">
+                        <a href="addNewUser.html">Add New User</a>
+                    </li>
+                    <li>
+                        <img src="images/icons8-list-view-50.png" alt="">
+                        <a href="userlist.html">User list</a>
+                    </li>
+                </ul>
+                <li>
+                    <a href="patient.html">
+                        <img src="images/icons8-pill-64.png"  alt="">
+                        <div class="title">Patients</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="form.html">
+                        <img src="images/icons8-form-64.png" alt="">
+                        <div class="title">Form</div>
+                    </a>
+                </li>
+                <li class="side-1">
+                    <a href="#">
+                        <img src="images/icons8-grid-50.png" alt="">
+                        <div class="title">Tables</div>
+                        <img src="images/icons8-chevron-right-30.png" class="image img-1" alt="">
+                    </a>
+                </li>
+                <ul class="sidebar-1 subMenu">
+                    <li>
+                        <img src="images/icons8-medical-doctor-64.png" alt="">
+                        <a href="doctors.html">Table Doctors</a>
+                    </li>
+                    <li> 
+                        <img src="images/icons8-nurse-64.png" alt="">
+                        <a href="nurses.html">Table Nurses</a>
+                    </li>
+                </ul>
+                <li class="side-2 active">
+                    <a href="#">
+                        <img src="images/icons8-user-32.png" alt="">
+                        <div class="title">User</div>
+                        <img src="images/icons8-chevron-right-30.png" class="image img-2" alt="">
+                    </a>
+                </li>
+                <ul class="sidebar-2 subMenu">
+                    <li>
+                        <img src="images/icons8-login-50.png" alt="">
+                        <a href="login.html">Log in</a>
+                    </li>
+                    <li>
+                        <img src="images/icons8-register-64.png" alt="">
+                        <a href="register.html">Register</a>
+                    </li>
+                    <li class="Active-sub-menu">
+                        <img src="images/icons8-forgot-password-60.png" alt="">
+                        <a href="forget.html">Forgot Password</a>
+                    </li>
+                </ul>
+                <li>
+                    <a href="#">
+                        <img src="images/icons8-setting-48.png" alt="">
+                        <div class="title">Setting</div>
+                    </a>
+                </li>
+                <li>
+                   
+                </li>
+            </ul>
+            <div class="sign-out">
+                <a href="#">
+                    <img src="images/icons8-sign-out-50.png" alt="">
+                    <div class="title">Sing-out</div>
+                </a>
+            </div>
+        </nav>
+        <!-- ==================== End nav ====================== -->
+
+        <!-- ==================== Container ====================== -->
+    <div class="container">
+        <!-- ===================== Header ======================== -->
+        <div class="header">
+            <img src="images/icons8-menu-30.png" id="menu" alt="">
+            <img src="images/icons8-menu-30.png" class="menu" alt="">
+            <h1>Dashbord</h1>
+            <div class="user">
+                <img src="images/icons8-notification-bell-24.png" alt="">
+                <img src="images/icons8-messages-50.png" alt="">
+                <img src="images/profile.webp" class="profile" alt="">
+            </div>
+            <div class="log-out">
+                <img src="images/icons8-cancel-64.png" class="cancel" alt="">
+                <div class="user">
+                    <img src="images/profile.webp" class="user-img" alt="">
+                    <h2>John Smith</h2>
+                </div>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="images/icons8-setting-48.png" alt="">
+                            <div class="title">Setting</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/icons8-sign-out-50.png" alt="">
+                            <div class="title">log out</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- ===================== End Header ======================== -->
+        <!-- ===================== Forgot Password ======================== -->
+        <div class="add-user">
+            <h1>Forget Password</h1>
+            <div class="input-box">
+                <div class="input">
+                    <input type="text" placeholder="Email or User Name">
+                  </div>
+                  <div class="btn"><input type="submit" value="Forget Password"></div>
+            </div>
+        </div>
+        <!-- ===================== End Forgot Password ======================== -->
+
+        <!-- ==================== Footer ====================== -->
+
+        <div class="footer">
+            <p> 2022 &copy; Designed-by-Yahyiinho__12</p>
+        </div>
+        <!-- ==================== End Footer ====================== -->
+    </div>
+        <!-- ==================== End Container ====================== -->
+        <script>
+            var sidebar = document.querySelector(".sidebar");
+           var sidebar_1 = document.querySelector(".sidebar-1");
+           var sidebar_2 = document.querySelector(".sidebar-2");
+           var li = document.querySelector(".side");
+           var li_1 = document.querySelector(".side-1");
+           var li_2 = document.querySelector(".side-2");
+           var img = document.querySelector(".img");
+           var img1 = document.querySelector(".img-1");
+           var img2 = document.querySelector(".img-2");
+   
+           var menu = document.querySelector("#menu");
+           var Menu = document.querySelector(".menu");
+           var Close = document.querySelector(".close");
+           var container = document.querySelector(".container");
+           var nav = document.querySelector("#nav");
+   
+           var profile = document.querySelector(".profile");
+           var cancel = document.querySelector(".cancel");
+           var logOut = document.querySelector(".log-out");
+   
+           logOut.style.right = '-100%';
+           profile.onclick = function(){
+               if(logOut.style.right == '-100%'){
+                   logOut.style.right = '0%';
+               }
+               cancel.onclick = function(){
+                   logOut.style.right = '-100%';
+               }
+           }
+   
+           menu.onclick = function(){
+               container.classList.toggle("active");
+               nav.classList.toggle("active");
+           }
+   
+           sidebar.style.height = "0px";
+           sidebar_1.style.height = "0px";
+           sidebar_2.style.height = "0px";
+           li.onclick = function(){
+               if(sidebar.style.height == "0px"){
+                   sidebar.style.height='110px';
+                   sidebar.style.opacity = "1";
+                   img.src="images/icons8-chevron-up-24.png";
+               }else{
+                   sidebar.style.height='0px';
+                   img.src="images/icons8-chevron-right-30.png";
+                   sidebar.style.opacity = "0";
+               }
+           }
+           li_1.onclick = function(){
+               if(sidebar_1.style.height == "0px"){
+                   sidebar_1.style.height='110px';
+                   sidebar_1.style.opacity = "1";
+                   img1.src="images/icons8-chevron-up-24.png";
+               }else{
+                   sidebar_1.style.height='0px';
+                   img1.src="images/icons8-chevron-right-30.png";
+                   sidebar_1.style.opacity = "0";
+               }
+           }
+           li_2.onclick = function(){
+               if(sidebar_2.style.height == "0px"){
+                   sidebar_2.style.height='150px';
+                   sidebar_2.style.opacity = "1";
+                   img2.src="images/icons8-chevron-up-24.png";
+               }else{
+                   sidebar_2.style.height='0px';
+                   img2.src="images/icons8-chevron-right-30.png";
+                   sidebar_2.style.opacity = "0";
+               }
+           }
+           Menu.onclick = function(){
+               nav.style.left = "0%";
+           }
+           Close.onclick = function(){
+               nav.style.left = "0%";
+               if(nav.style.left == "0%"){
+                   nav.style.left = "-80%";
+               }else{
+                   nav.style.left = "0%";
+               }
+           }
+           
+       </script>
+</body>
+</html>

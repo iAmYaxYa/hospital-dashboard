@@ -1,0 +1,939 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+:root{
+    --color:#3949d8e0;
+    --color1:#384298e0;
+    --color2:#1a3441;
+}
+html{
+    scroll-behavior: smooth;
+}
+/* ============================ Nav ============================== */
+nav{
+    position: fixed;
+    height: 100vh;
+    width: 20%;
+    background-color: var(--color);
+    /* padding: 10px; */
+    left: 0;
+    transition: .4s ease;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+nav.active{
+    width: 7%;
+}
+.close{
+    position: absolute;
+    z-index: 8;
+    width: 30px;
+    top: 25px;
+    filter: invert(1);
+    left: 85%;
+    cursor: pointer;
+    display: none;
+}
+nav .logo{
+    display: flex;
+    height: 60px;
+    align-items: center;
+    margin-bottom: 60px;
+    cursor: pointer;
+}
+nav .logo img{
+    width: 50px;
+    margin-right: 15px;
+}
+nav .logo h1{
+    font-size: 37px;
+    margin-left: 2px;
+    margin-bottom: -18px;
+    color: #fff;
+}
+nav ul li{
+    width: 100%;
+    /* margin-top: 10px; */
+    padding: 10px;
+    padding-left: 20px;
+    cursor: pointer;
+    list-style: none;
+    transition: .4s ease;
+    position: relative;
+    z-index: 99;
+}
+nav ul .active{
+    background-color: #f1f1f1;
+    padding: 10px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+nav ul li:hover{
+    transform: translateX(15px);
+}
+nav ul li a{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+    transition: .4s ease;
+}
+nav ul li a:hover:before{
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #fff;
+    left: -18px;
+}
+nav ul li a img{
+    width: 35px;
+    filter: invert(1);
+    margin-right: 15px;
+}
+nav ul .active a img{
+    width: 35px;
+    filter: invert(0);
+    margin-right: 15px;
+}
+nav ul li a .pa{
+    width: 35px;
+    margin-right: 15px;
+    filter: invert(0);
+}
+nav ul li a .image{
+    width: 18px;
+    position: absolute;
+    right: 0px;
+    transition: .4s ease;
+}
+nav.active .image{
+    display: none;
+}
+nav ul li a .title{
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+}
+nav ul .active a .title{
+    font-size: 20px;
+    text-align: center;
+    color: #000;
+}
+nav ul .active a{
+    color: #000;
+    text-align: center;
+}
+.sign-out{
+    width: 100%;
+    margin-top: 20%;
+    padding-left: 20px;
+    transition: .4s ease;
+}
+.sign-out:hover{
+    transform: translateX(15px);
+}
+.sign-out a{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+    transition: .4s ease;
+}
+.sign-out a:hover:before{
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #fff;
+    left: -18px;
+}
+.sign-out a img{
+    filter: invert(1);
+    margin-right: 15px;
+    width: 30px;
+}
+.sign-out a .title{
+    font-size: 20px;
+    color: #fff;
+}
+.sidebar,.sidebar-1,.sidebar-2{
+    padding-left: 20px;
+    transition: .4s ease;
+    height: 0px;
+    background-color: var(--color1);
+    opacity: 0;
+    transition: .4s ease;
+}
+.sidebar li,.sidebar-1 li,.sidebar-2 li{
+    padding-left: 40px;
+}
+.subMenu img{
+    width: 30px;
+    filter: invert(1);
+    display: inline;
+    margin-right: 5px;
+    margin-bottom: -10px;
+}
+.subMenu a{
+    display: inline;
+}
+.sidebar a{
+    color: #fff;
+    font-size: 18px;
+}
+.sidebar-1 a{
+    color: #fff;
+    font-size: 18px;
+}
+.sidebar-2 a{
+    font-size: 18px;
+    color: #fff;
+}
+@media (max-width: 1260px){
+    nav{
+        width: 5%;
+    }
+    nav.active{
+        width: 18%;
+    }
+    nav.active .image{
+        display: block;
+    }
+    nav ul li a .image{
+        display: none;
+    }
+}
+@media (max-width: 1115px){
+    nav{
+        width: 6%;
+    }
+    nav.active{
+        width: 18%;
+    }
+    nav.active .image{
+        display: block;
+    }
+    nav ul li a .image{
+        display: none;
+    }
+    nav .logo img{
+        width: 45px;
+        margin-right: 18px;
+    }
+    nav .logo h1{
+        font-size: 30px;
+        margin-left: 2px;
+        margin-bottom: -18px;
+        color: #fff;
+    }
+}
+@media (max-width: 900px){
+    nav{
+        width: 7%;
+    }
+    nav.active{
+        width: 23%;
+    }
+    nav.active .image{
+        display: block;
+    }
+    nav ul li a .image{
+        display: none;
+    }
+    nav .logo img{
+        width: 45px;
+        margin-right: 18px;
+    }
+    nav .logo h1{
+        font-size: 30px;
+        margin-left: 2px;
+        margin-bottom: -18px;
+        color: #fff;
+    }
+}
+@media (max-width: 800px){
+    nav{
+        position: fixed;
+        left: -80%;
+        z-index: 3;
+        height: 100vh;
+        top: 0;
+        bottom: 0%;
+        width: 40%;
+    }
+    .close{
+        position: absolute;
+        z-index: 8;
+        width: 30px;
+        top: 25px;
+        filter: invert(1);
+        left: 85%;
+        cursor: pointer;
+        display: block;
+        transition: .4s ease;
+    }
+    nav ul li a .image{
+        display: block;
+    }
+}
+@media (max-width: 600px){
+    nav{
+        position: fixed;
+        left: -80%;
+        z-index: 3;
+        height: 100vh;
+        top: 0;
+        bottom: 0%;
+        width: 60%;
+    }
+}
+/* ============================ End Nav ============================== */
+
+/* ========================== container ================================= */
+.container{
+    width: 80%;
+    min-height: 100vh;
+    background-color: #f1f1f1;
+    position: absolute;
+    left: 20%;
+    transition: .4s ease;
+    overflow-x: hidden;
+    position: relative;
+}
+.container.active{
+    width: 93%;
+    left: 5%;
+}
+/* ============================ Header ============================== */
+.container .header{
+    position: relative;
+    display: flex;
+    width: 100%;
+    background-color: #ddd;
+    padding: 10px;
+    justify-content: space-between;
+    z-index: 2;
+}
+.container .header h1{
+    font-size: 40px;
+    position: absolute;
+    left: 60px;
+    bottom: 14px;
+}
+.container .header img{
+    cursor: pointer;
+    width: 40px;
+}
+.container .header .user img{
+    width: 40px;
+    margin-left: 10px;
+}
+.container .header .menu{
+    position: absolute;
+    left: 8px;
+    width: 45px;
+    height: 50px;
+    display: none;
+}
+.container .header .user .profile{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 30px;
+    border: 2px solid var(--color);
+    cursor: pointer;
+    transition: .4s ease;
+}
+.log-out{
+    position: absolute;
+    top: 0;
+    right: -100%;
+    background-color: var(--color2);
+    border-radius: 6px;
+    box-shadow: 0 5px 20px 3px #ddd;
+    padding: 20px;
+    transition: all .4s ease-in-out;
+}
+.log-out .cancel{
+    position: absolute;
+    top:20px;
+    right: 10px;
+    filter: invert(1);
+    width: 40px;
+}
+.log-out .user-img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.log-out .user{
+    display: flex;
+    align-items: center;
+    margin-right: 80px;
+    margin-bottom: 40px;
+}
+.log-out .user h2{
+    /* margin-top: 10px; */
+    color: #fff;
+}
+.log-out ul{
+    margin-top: 40px;
+}
+.log-out ul li{
+    width: 100%;
+    margin-bottom: 20px;
+    list-style: none;
+}
+.log-out ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+.log-out ul li a img{
+    filter: invert(1);
+    width: 30px;
+    margin-right: 10px;
+}
+/* ============================ End Header ============================== */
+
+/* ==================== contant =========================== */
+.contant{
+    width: 90%;
+    margin: 0px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 30px 0;
+}
+.contant .boxe{
+    flex-basis: 24%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    border-radius: 6px;
+    align-items: center;
+    cursor: pointer;
+    background-color: #fff;
+    box-shadow: 0 5px 20px 3px #ddd;
+    transition: .4s ease;
+}
+.contant .boxe img{
+    width: 80px;
+    margin-left: 10px;
+}
+.contant .boxe:hover{
+    background-color: var(--color);
+    color: #fff;
+}
+.contant .boxe h2{
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+.contant .boxe p{
+    font-size: 20px;
+    color: rgba(0,0,0,0.6);
+    transition: all .4s ease;
+}
+.contant .boxe:hover p{
+    font-size: 20px;
+    color: #ddd;
+}
+@media (max-width: 1260px){
+    .container{
+        width: 95%;
+        min-height: 100vh;
+        background-color: #f1f1f1;
+        position: absolute;
+        left: 5%;
+        transition: .4s ease;
+        overflow-x: hidden;
+    }
+    .container.active{
+        width: 82%;
+        left: 18%;
+    }
+    .contant .boxe{
+        flex-basis: 48%;
+        margin: 1%;
+    }
+}
+@media (max-width: 1115px){
+    .container{
+        width: 93%;
+        left: 6%;
+    }
+}
+@media (max-width: 900px){
+    .container{
+        width: 93%;
+        left: 7%;
+    }
+    .container.active{
+        width: 80%;
+        left: 23%;
+    }
+}
+@media (max-width: 800px){
+    .container{
+        width: 100%;
+        left: 0;
+    }
+    .container #menu{
+        visibility: hidden;
+    }
+    .container .header .menu{
+        display: block;
+    }
+}
+@media (max-width: 590px){
+    .contant .boxe{
+        flex-basis: 100%;
+        margin: 2% 0;
+    }
+}
+/* ==================== End contant =========================== */
+/* ==================== Survey =========================== */
+.survey{
+    width: 90%;
+    padding: 15px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.survey .title{
+    border-bottom: 2px solid #d1d1d1;
+    line-height: 2.5;
+    color: var(--color2);
+    margin-bottom: 20px;
+}
+.survey img{
+    width: 100%;
+    cursor: pointer;
+}
+.survey .boxes{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.survey .boxes .box{
+    flex-basis: 25%;
+}
+.survey .boxes h1{
+    color: var(--color2);
+    margin-bottom: 5px;
+    font-size: 40px;
+}
+.survey .boxes p{
+    color: rgba(0,0,0,0.6);
+    font-size: 18px;
+}
+@media (max-width: 900px){
+    .survey .boxes .box{
+        flex-basis: 50%;
+        margin: 2% 0;
+    }
+}
+/* ==================== End Survey =========================== */
+
+/* ==================== Staf =========================== */
+.stafs{
+    width: 90%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    overflow-x: auto;
+}
+.stafs h1{
+    display: block;
+    color: var(--color2);
+    margin-bottom: 30px;
+}
+.stafs .staff{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.stafs .staff .staf{
+    flex-basis: 25%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 5% 0%;
+    cursor: pointer;
+}
+.stafs .staf img{
+    width: 200px;
+    height: 250px;
+    border-radius: 50%;
+    border: 5px solid var(--color);
+}
+.stafs .staf h3{
+    text-align: center;
+    color: var(--color2);
+    margin-top: 10px;
+}
+.stafs .staf p{
+    text-align: center;
+    color: rgba(0,0,0,0.6);
+    font-weight: 600;
+    margin-top: 10px;
+}
+/* media queries */
+@media (max-width: 540px){
+    .stafs .staff .staf{
+        flex-basis: 100%;
+    }
+}
+/* ==================== End Staf =========================== */
+
+/* ==================== Visitors =========================== */
+.visitros{
+    width: 90%;
+    padding: 15px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.visitros h1{
+    display: block;
+    color: var(--color2);
+    margin-bottom: 30px;
+}
+.visitros img{
+    width: 100%;
+    cursor: pointer;
+}
+.nationals{
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.nationals .nat{
+    /* display: flex; */
+    flex-basis: 48%;
+    margin: 2% 0.5% ;
+    position: relative;
+}
+.nationals .nat h4{
+    color: var(--color2);
+    margin-bottom: 5px;
+    display: inline-block;
+}
+.nationals .nat h4 ~ .Europe{
+    position: absolute;
+    left: 86%;
+    color: rgba(0,0,0,0.6);
+    display: inline;
+}
+.nationals .nat h4 ~ .usa{
+    position: absolute;
+    left: 72%;
+    color: rgba(0,0,0,0.6);
+    display: inline;
+}
+.nationals .nat h4 ~ .Asia{
+    position: absolute;
+    left: 61%;
+    color: rgba(0,0,0,0.6);
+    display: inline;
+}
+.nationals .nat h4 ~ .Austrolia{
+    position: absolute;
+    left: 55%;
+    color: rgba(0,0,0,0.6);
+    display: inline;
+}
+.nationals .nat h4 ~ .Africa{
+    position: absolute;
+    left: 42%;
+    color: rgba(0,0,0,0.6);
+    display: inline;
+}
+
+.nationals .nat div{
+    height: 10px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #ddd;
+    cursor: pointer;
+    position: relative;
+}
+.nationals .nat div .Europe{
+    position: absolute;
+    height: 100%;
+    width: 86%;
+    background-color: seagreen;
+    border-radius: 10px;
+}
+.nationals .nat div .usa{
+    position: absolute;
+    height: 100%;
+    width: 72%;
+    background-color: lightgreen;
+    border-radius: 10px;
+}
+.nationals .nat div .Asia{
+    position: absolute;
+    height: 100%;
+    width: 61%;
+    background-color: lawngreen;
+    border-radius: 10px;
+}
+.nationals .nat div .Austrolia{
+    position: absolute;
+    height: 100%;
+    width: 55%;
+    background-color: yellow;
+    border-radius: 10px;
+}
+.nationals .nat div .Africa{
+    position: absolute;
+    height: 100%;
+    width: 42%;
+    background-color: crimson;
+    border-radius: 10px;
+}
+@media (max-width: 700px){
+    .nationals .nat{
+        flex-basis: 100%;
+        margin: 4% 0%;
+        position: relative;
+    }
+}
+/* ==================== End Visitors =========================== */
+
+/* ==================== Footer =========================== */
+.footer{
+    width: 90%;
+    padding: 30px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: center;
+}
+.footer p{
+    color: var(--color2);
+    font-weight: 600;
+    font-size: 18px;
+}
+/* ==================== End Footer =========================== */
+
+/* ============================ Add User ============================== */
+.add-user{
+    width: 90%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+}
+.input-box{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px 0;
+    justify-content: space-between;
+}
+.input-box .input{
+    flex-basis: 48%;
+    height: 50px;
+    margin: 0.5%;
+}
+.Active-sub-menu{
+    width: 100%;
+    background-color: var(--color2);
+    padding: 15px 0;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+.add-user .text{
+    width: 100%;
+    margin-top: 10px;
+}
+.add-user .text textarea{
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    outline: none;
+    border: 2px solid #d1d1d1;
+    border-radius: 10px;
+}
+.add-user .input-box .input input{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    outline: none;
+    border: 2px solid #d1d1d1;
+    padding-left: 10px;
+    font-size: 16px;
+}
+.add-user .btn{
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+}
+.add-user .btn input{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 2px solid var(--color);
+    background-color: var(--color);
+    color: #fff;
+    cursor: pointer;
+}
+/* ============================ End Add User ============================== */
+
+/*  ===================== UserList ========================  */
+.userlist{
+    width: 90%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+}
+.userlist h1{
+    margin-bottom: 30px;
+}
+.userlist table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.userlist th{
+    background-color: var(--color);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    border: 2px solid #d1d1d1;
+}
+.userlist td{
+    padding: 10px;
+    position: relative;
+    text-align: center;
+    font-size: 18px;
+    color: rgba(0,0,0,0.8);
+    border: 2px solid var(--color);
+}
+.userlist td span{
+    font-size: 18px;
+    color:  rgba(53, 188, 53, 0.972);
+    position: relative;
+    text-align: center;
+}
+.userlist td span::before{
+    content: '';
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    right: -20px;
+    top: 4px;
+    background-color: rgba(16, 200, 16, 0.948);
+    border-radius: 50%;
+}
+.userlist td img{
+    border: 2px solid var(--color2);
+    background-color: var(--color);
+    cursor: pointer;
+    filter: invert(1);
+    width: 40px;
+    border-radius: 50%;
+}
+/*  ===================== End UserList ========================  */
+
+/* ============================ Patients ============================== */
+.patient{
+    width: 90%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+}
+.patient .title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.patient .title .search{
+    flex-basis: 50%;
+}
+.patient .title .search label{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+.patient .title .search label input{
+    width: 100%;
+    height: 100%;
+    padding-left: 70px;
+    font-size: 18px;
+    outline: none;
+    border-radius: 30px;
+    border: 2px solid var(--color);
+}
+.patient .title .search label img{
+    width: 35px;
+    cursor: pointer;
+    position: absolute;
+    left: 10px;
+}
+.patient table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.patient th{
+    background-color: var(--color);
+    color: #fff;
+    border: 2px solid #d1d1d1;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+}
+.patient td{
+    border: 2px solid var(--color);
+    color: rgba(0,0,0,0.8);
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+}
+.patient td img{
+    width: 40px;
+}
+.doctors td img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--color);
+}
+@media (max-width: 700px){
+    .input-box .input{
+        flex-basis: 100%;
+        margin: 1% 0;
+    }
+}
+/* ============================ End Patients ============================== */
+
+/* ========================== End container ================================= */
